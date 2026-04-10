@@ -16,8 +16,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "api:start": "node api/server.js",
+    "api:test": "node --test api/server.test.js",
     "eject": "react-scripts eject",
     "submit": "react-scripts test src/__tests__/submit.test.js --reporters=default --reporters=jest-junit"
+  },
+  "engines": {
+    "node": ">=24"
   },
   "eslintConfig": {
     "extends": "react-app"

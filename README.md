@@ -42,6 +42,31 @@ Neste desafio você vai praticar os seus conhecimentos em:
 - **Fetch API**
 - **JS:** *Array.map*, *Array.filter*, *Array.reduce*, *Array.find*, *Array.sort*
 
+## API assíncrona de geração e compactação (Node.js 24)
+
+Além do SPA, o projeto agora possui uma API HTTP em Node.js 24 para gerar arquivos e processá-los em fila de forma assíncrona.
+
+### Executar API
+
+```bash
+npm run api:start
+```
+
+### Endpoints
+
+- `GET /health` - healthcheck
+- `POST /jobs` - cria um job e coloca na fila
+- `GET /jobs/:id` - consulta status do job (`pending`, `processing`, `completed`, `failed`)
+- `GET /jobs/:id/download` - baixa o `.zip` quando o job concluir
+
+### Exemplo de criação de job
+
+```bash
+curl -X POST http://localhost:3000/jobs \
+  -H "Content-Type: application/json" \
+  -d '{"files":[{"name":"a.txt","content":"A"},{"name":"b.txt","content":"B"}]}'
+```
+
 ## Requisitos:
 
 * **[Node v13.8.0](https://nodejs.org/en/)** - ou superior, instalado em seu computador.
@@ -50,7 +75,6 @@ Neste desafio você vai praticar os seus conhecimentos em:
 ## Screenshot de Referência
 
 ![](https://codenation-challenges.s3-us-west-1.amazonaws.com/react-14/screenshot.png)
-
 
 
 
